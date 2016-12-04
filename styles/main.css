@@ -1,0 +1,106 @@
+body {
+    font-family: 'Raleway', Helvetica, Arial, sans-serif;
+    font-size: 16px;
+    line-height: 24px;
+    background-color: lightslategray;
+}
+
+.wrapper {
+    margin: 50px 0;
+    background-color: white;
+    box-shadow: 0 0 50px rgba(0, 0, 0, .1);
+}
+
+.row {
+    margin: 15px -15px;
+}
+
+.intro {
+    padding: 20px 0;
+}
+
+h1, h2 {
+    text-transform: uppercase;
+}
+
+.name {
+    font-size: 50px;
+    font-weight: 600;
+    line-height: 72px;
+    margin: 0;
+}
+
+.description {
+    font-size: 24px;
+    line-height: 34px;
+    margin: 0 0 12px;
+}
+
+ul {
+    padding: 0;
+}
+
+li {
+    list-style: none;
+}
+
+section {
+    border-bottom: 1px solid lightgray;
+}
+
+footer p {
+    margin: 0;
+}
+
+a:hover, a:visited, a:focus, a:active {
+    text-decoration: none;
+    outline: none;
+}
+
+a:hover {
+    color: #0089d5;
+}
+
+.social li {
+    display: inline-block;
+}
+
+.icon {
+    line-height: 36px;
+    display: inline-block;
+    width: 36px;
+    text-align: center;
+    color: #fff;
+    border-radius: 50%;
+    background-color: #009fe3;
+}
+
+.icon:hover {
+    color: #fff;
+    background-color: #0089d5;
+}
+
+.photo {
+    display: inline-block;
+    overflow: hidden;
+    border-radius: 50%;
+}
+
+.photo img {
+    width: 230px;
+    height: 230px;
+}
+
+.animate {
+    transition: all .3s ease-in-out;
+}
+
+@media (max-width: 768px) {
+    .wrapper {
+        margin: 0;
+    }
+
+    .intro * {
+        text-align: center;
+    }
+}
