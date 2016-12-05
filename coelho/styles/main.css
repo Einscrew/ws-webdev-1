@@ -1,0 +1,84 @@
+body {
+    font-family: 'Raleway', Helvetica, Arial, sans-serif;
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 200; 
+    background-color: white;
+    padding-top: 50px;
+}
+
+.row {
+    margin: 15px -15px;
+}
+
+h1, h2 {
+    text-transform: uppercase;
+    padding-bottom: 15px;
+}
+
+.name {
+    font-size: 50px;
+    font-weight: 600;
+    line-height: 72px;
+    margin: 0;
+}
+
+.description {
+    font-size: 24px;
+    line-height: 34px;
+    margin: 0 0 12px;
+}
+
+ul {
+    padding: 0;
+    font-size: 20px;
+}
+
+li {
+    list-style: none;
+    padding-bottom: 10px;
+}
+
+section {
+    border-bottom: 1px solid lightgray;
+    padding-top: 10px;
+}
+
+a:hover, a:visited, a:focus, a:active {
+    text-decoration: none;
+    outline: none;
+}
+
+a:hover {
+    color: #0089d5;
+}
+
+.icon {
+    line-height: 36px;
+    display: inline-block;
+    width: 36px;
+    text-align: center;
+    color: #fff;
+    border-radius: 50%;
+    background-color: #009fe3;
+}
+
+.icon:hover {
+    color: #fff;
+    background-color: #0089d5;
+}
+
+.photo {
+    display: inline-block;
+    overflow: hidden;
+    border-radius: 50%;
+}
+
+.photo img {
+    width: 230px;
+    height: 230px;
+}
+
+footer {
+    padding-top: 40px;
+}
