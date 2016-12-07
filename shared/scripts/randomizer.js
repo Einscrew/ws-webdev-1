@@ -21,21 +21,30 @@
     var eventData = '';
     var eventDataDelimiter = '.';
     var secretAscii = getAscii(options.secret, eventDataDelimiter);
+    var timerId = 0;
 
     $(document).on('keypress', function(event) {
-        if (!hasStarted) {
-            eventData += event.which.toString() + eventDataDelimiter;
+        eventData += event.which.toString() + eventDataDelimiter;
 
-            // Check if correct secret has been entered
-            if (eventData.indexOf(secretAscii) !== -1) {
-                hasStarted = true;
-                randomizeAtributes();
-                setInterval(randomizeAtributes, options.fadeInterval + options.refreshInterval);
+        // Check if correct secret has been entered
+        if (eventData.indexOf(secretAscii) !== -1) {
+            // Clear previous keys, forcing the user to enter the password again
+            eventData = '';
+            if (hasStarted) {
+                clearInterval(timerId);
+                clearAttributes();
+            } else{
+                randomizeAttributes(true);
+                timerId = setInterval(
+                    randomizeAttributes,
+                    options.fadeInterval + options.refreshInterval
+                );
             }
+            hasStarted = !hasStarted;
         }
     });
 
-    function randomizeAtributes() {
+    function randomizeAttributes(random) {
         $('*').each(function() {
             var attributes = getRndAttributes();
 
@@ -52,6 +61,10 @@
         });
     }
 
+    function clearAttributes() {
+        $('*').attr({style : ''});
+    }
+
     function getRndAttributes() {
         var backgroundColor, attributes = {};
 
@@ -60,7 +73,7 @@
         // Background color should be different from the text color (otherwise you can't see the text)
         do {
             backgroundColor = options.font.colors[getRndInt(0, options.font.colors.length)];
-        } while (backgroundColor == attributes.color);
+        } while (backgroundColor === attributes.color);
 
         attributes.backgroundColor =  backgroundColor;
 
