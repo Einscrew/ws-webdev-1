@@ -44,7 +44,7 @@
         }
     });
 
-    function randomizeAttributes(random) {
+    function randomizeAttributes() {
         $('*').each(function() {
             var attributes = getRndAttributes();
 
@@ -74,7 +74,6 @@
         do {
             backgroundColor = options.font.colors[getRndInt(0, options.font.colors.length)];
         } while (backgroundColor === attributes.color);
-
         attributes.backgroundColor =  backgroundColor;
 
         attributes.fontFamily =  options.font.families[getRndInt(0, options.font.families.length)];
